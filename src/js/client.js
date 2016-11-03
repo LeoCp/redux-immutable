@@ -15,7 +15,7 @@ class Layout extends React.Component{
   render(){
       console.log();
     return(
-      <h1>Hello {this.people.get(0).get("name")}</h1>)
+      <h1>Hello, {this.people.get(0).get("name")}</h1>)
   }
 }
 
