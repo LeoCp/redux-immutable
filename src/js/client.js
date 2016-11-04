@@ -1,23 +1,45 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { fromJS ,List } from 'immutable';
+
+
+//Import components
+import Title from './components/Title.js';
+import Container from './components/Container.js';
+import Card from './components/Card.js';
 
 class Layout extends React.Component{
-  constructor() {
-      super();
-      this.people = List([
-        fromJS({id:0, name:"Leonardo", age:20}),
-        fromJS({id:1, name:"Neide", age:21}),
-        fromJS({id:2, name: "Nathalia",age: 19})
-      ]);
-  }
 
   render(){
-      console.log();
+  
     return(
-      <h1>Hello, {this.people.get(0).get("name")}</h1>)
+      <div>
+        <Title/>
+        <Container>
+
+          <Card
+            title="First card"
+            text="Some quick example text to build on the card title and make up the bulk of the card's content."
+            link1="Link 1"
+            link2="Link 2" />
+
+          <Card
+           title="Second card"
+           text="Some quick example text to build on the card title and make up the bulk of the card's content."
+           link1="Link 1"
+           link2="Link 2"
+           />
+
+          <Card
+            title="Third card"
+            text="Some quick example text to build on the card title and make up the bulk of the card's content."
+            link1="Link 1"
+            link2="Link 2"
+          />
+        </Container>
+      </div>
+    )
   }
 }
 
-const app = document.getElementById('app');
+const app = document.getElementById('root');
 ReactDOM.render(<Layout/>,app);
